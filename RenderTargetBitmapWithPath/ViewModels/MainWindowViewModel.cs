@@ -9,6 +9,7 @@ public partial class MainWindowViewModel : ViewModelBase
 {
     public Cursor OriginalPathCursor { get; }
     public Cursor OriginalPathTooSmallCursor { get; }
+    public Cursor OriginalPathBarelyShowingCursor { get; }
     public Cursor ManuallyScaledPathCursor { get; }
     public Cursor PathIconPathCursor { get; }
 
@@ -27,6 +28,9 @@ public partial class MainWindowViewModel : ViewModelBase
         OriginalPathCursor = VisualCursorFactory.Create(originalPath, new Avalonia.PixelSize(512, 512), new Avalonia.PixelPoint(256, 256), "cursororiginal.png");
 
         // Try to shrink the original Path by rendering to a smaller RenderTargetBitmap
+        OriginalPathBarelyShowingCursor = VisualCursorFactory.Create(originalPath, new Avalonia.PixelSize(180, 150), new Avalonia.PixelPoint(90, 75), "cursororiginalbarelyshowing.png");
+
+        // Try to shrink the original Path by rendering to a smaller RenderTargetBitmap
         OriginalPathTooSmallCursor = VisualCursorFactory.Create(originalPath, new Avalonia.PixelSize(length, length), new Avalonia.PixelPoint(length / 2, length / 2), "cursororiginaltoosmall.png");
 
         // Manually shrunk in Inkscape
@@ -41,7 +45,7 @@ public partial class MainWindowViewModel : ViewModelBase
         ManuallyScaledPathCursor = VisualCursorFactory.Create(manuallyScaledPath, new Avalonia.PixelSize(length, length), new Avalonia.PixelPoint(length / 2, length / 2), "cursormanuallyscaled.png");
 
         // Try to put the original Path into a PathIcon and force layout
-        length = 1024;
+        length = 64;
         var pathIcon = new PathIcon
         {
             Width = length,

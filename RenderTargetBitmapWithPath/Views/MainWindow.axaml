@@ -22,6 +22,8 @@
     <StackPanel Spacing="8">
         <TextBlock Cursor="{Binding OriginalPathCursor}" Text="Original Path" />
 
+        <TextBlock Cursor="{Binding OriginalPathBarelyShowingCursor}" Text="Original Path Barely Showing" />
+
         <TextBlock Cursor="{Binding OriginalPathTooSmallCursor}" Text="Original Path Too Small" />
 
         <TextBlock Cursor="{Binding ManuallyScaledPathCursor}" Text="Manually Scaled Path" />
