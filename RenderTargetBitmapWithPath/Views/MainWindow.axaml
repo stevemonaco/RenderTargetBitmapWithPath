@@ -29,5 +29,7 @@
         <TextBlock Cursor="{Binding ManuallyScaledPathCursor}" Text="Manually Scaled Path" />
 
         <TextBlock Cursor="{Binding PathIconPathCursor}" Text="Via Path Icon" />
+
+        <TextBlock Cursor="{Binding ViewboxPathCursor}" Text="Via Viewbox" />
     </StackPanel>
 </Window>
